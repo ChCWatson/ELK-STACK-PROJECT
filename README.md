@@ -60,18 +60,58 @@ A summary of the access policies in place can be found in the table below.
 |Web-1          | No                    |  10.0.0.8                    |
 |Web-2          | No                    |  10.0.0.9                    |
 |Elk-Stack          | Yes                    | Personal IP, 10.0.0.1                     |
-|Load Balancer          | No                    | Open*                     |
+|Load Balancer          | Yes                    | Open*                     |
 
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because system installation and updates can be done efficiently. 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+---
+ - name: Instal Packages
+   hosts: elk
+   become: true
+   tasks:
+   - name: set maximum map count in sysctl/systemd
+     sysctl:
+       name: vm.max_map_count
+       value: 262144
+       state: present
+       reload: yes
+   - name: docker.io
+     apt:
+       force_apt_get: yes
+       update_cache: yes
+       name: docker.io
+       state: present
+   - name: instal pip3
+     apt:
+       force_apt_get: yes
+       name: python3-pip
+       state: present
+   - name: Install Docker module
+     pip:
+      name: docker
+      state: present
+   - name: download and launch elk
+     docker_container:
+       name: elk
+       image: sebp/elk:761
+       state: started
+       restart_policy: always
+       published_ports:
+         - 5601:5601
+         - 9200:9200
+         - 5044:5044
+    # Use command module
+   - name: Increase virtual memory
+     command: sysctl -w vm.max_map_count=262144
+    # Use shell module
+   - name: Increase virtual memory on restart
+     shell: echo "vm.max_map_count=262144" >> /etc/sysctl.conf
+
+
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
