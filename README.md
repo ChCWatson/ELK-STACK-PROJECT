@@ -5,8 +5,7 @@ UC-Davis Elk-Stack-Project
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
-(https://github.com/Plampking/ELK-STACK-PROJECT/blob/20ce09f8bee6506ff06fe5596d3a06f0db611791/Diagrams/ELK-Stack-Diagram.JPG)
+![](https://github.com/Plampking/ELK-STACK-PROJECT/blob/20ce09f8bee6506ff06fe5596d3a06f0db611791/Diagrams/ELK-Stack-Diagram.JPG)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
