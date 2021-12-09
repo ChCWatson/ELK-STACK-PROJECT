@@ -68,7 +68,7 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because system installation and updates can be done efficiently. 
 
 The playbook implements the following tasks:
----
+```bash
  - name: Instal Packages
    hosts: elk
    become: true
@@ -110,7 +110,7 @@ The playbook implements the following tasks:
     # Use shell module
    - name: Increase virtual memory on restart
      shell: echo "vm.max_map_count=262144" >> /etc/sysctl.conf
-
+```
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
