@@ -33,6 +33,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - Metricbeat helps monitor servers by collecting metrics from the system and services running within the server.
 
 The configuration details of each machine may be found below.
+_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
@@ -45,19 +46,22 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump-Box-Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+ - Personal Host IP Address
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the Jump-Box-Provisioner.
+The Jump-Box-Provisioner is able to connect via SSH to the Elk-Stack machine throught port 22. In addition the Personal Host IP address is also about to access the Elk-Stack machine through port 5601
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes              | Personal IP    |
+|Web-1          | No                    |  10.0.0.8                    |
+|Web-2          | No                    |  10.0.0.9                    |
+|Elk-Stack          | Yes                    | Personal IP, 10.0.0.1                     |
+|Load Balancer          | No                    | Open*                     |
+
 
 ### Elk Configuration
 
