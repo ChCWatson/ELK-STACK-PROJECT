@@ -11,7 +11,8 @@ The resistance isn’t receiving any emails because the primary email server is 
 
 Document what a corrected DNS record should be.
 ```
-The correct DNS record should be asltx.l.google.com as the primary, with a priority of 1. It should also have asltx.2.google.com as the secondary with a priority of 5.
+The correct DNS record should be asltx.l.google.com as the primary, with a priority of 1.
+It should also have asltx.2.google.com as the secondary with a priority of 5.
 ```
 
 
