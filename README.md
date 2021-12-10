@@ -1,5 +1,7 @@
 # ELK-STACK-PROJECT
-UC-Davis Elk-Stack-Project TESTSDASSDASDASDASD
+UC-Davis Elk-Stack-Project
+
+This repository includes files from my UC Davis Extension Cyber Security Project 1 Elk Stack
 
 ## Automated ELK Stack Deployment
 
