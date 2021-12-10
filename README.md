@@ -128,14 +128,17 @@ We have installed the following Beats on these machines:
 - Metric Beat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+
+Filebeat is a lihtweight shipper for fowarding and centralizing log data. Filebeat monitors log files or locations what you specify, collects log events and sends them to a output that is specified.
+
+Metricbeat is used to periodically collect metrics from the operating system and from the services running on them. Metricbeat takes the metrics and statistics that it collects and sends them to a output that is specified.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 - Copy the configuration file to ELK container.
-- Update the host file to include the Elk containers IP address.
+- Update the host file to include the Elk-stack container and webservers IP addresses.
 - Run the playbook, and navigate to Kibana http://[Elk IP address]5601/app/kibana to check that the installation worked as expected.
 
 Commands in order to download the playbook, update the files, etc.
