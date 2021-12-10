@@ -5,13 +5,14 @@ Determine and document the mail servers for starwars.com using NSLOOKUP.
 
 
 Explain why the Resistance isn't receiving any emails.
+```
 The resistance isn’t receiving any emails because the primary email server is not listed.
+```
 
-
-	Document what a corrected DNS record should be.
-
+Document what a corrected DNS record should be.
+```
 The correct DNS record should be asltx.l.google.com as the primary, with a priority of 1. It should also have asltx.2.google.com as the secondary with a priority of 5.
-
+```
 
 
 
