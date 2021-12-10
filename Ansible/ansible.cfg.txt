@@ -1,0 +1,13 @@
+
+root@86df8615b50e:/etc/ansible# git remote add origin tps://
+bash: git: command not found
+root@86df8615b50e:/etc/ansible# git remote add origin tps://
+bash: git: command not found
+root@86df8615b50e:/etc/ansible# tps://
+bash: tps://: No such file or directory
+root@86df8615b50e:/etc/ansible# git remote add origin https://github.com/Plampking/ELK-STACK-PROJECT.git
+bash: git: command not found
+root@86df8615b50e:/etc/ansible# get apt-update
+bash: get: command not found
+root@86df8615b50e:/etc/ansible# apt-update
+bash: apt-update: command not found
