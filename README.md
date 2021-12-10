@@ -138,7 +138,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the configuration file to ELK container.
-- Update the host file to include the Elk-stack container and webservers IP addresses.
+- Update the host file in the ansible directory to include the Elk-stack container and webservers IP addresses.
 - Run the playbook, and navigate to Kibana http://[Elk IP address]5601/app/kibana to check that the installation worked as expected.
 
 Commands in order to download the playbook, update the files, etc.
