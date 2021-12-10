@@ -5,7 +5,7 @@ UC-Davis Elk-Stack-Project
 
 The files in this repository were used to configure the network depicted below.
 
-![](https://github.com/Plampking/ELK-STACK-PROJECT/blob/main/Diagrams/HW%20Diagram.drawio%20(1).pdf)
+![](https://github.com/Plampking/ELK-STACK-PROJECT/blob/main/Diagrams/HW%20Diagram.jpg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -133,13 +133,69 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the configuration file to ELK container.
+- Update the host file to include the Elk containers IP address.
+- Run the playbook, and navigate to Kibana http://[Elk IP address]5601/app/kibana to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+Commands in order to download the playbook, update the files, etc.
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+Commands for installing Filebeat playbook
+```bash
+---
+- name: installing and launching filebeat
+  hosts: webservers
+  become: yes
+  tasks:
+
+  - name: download filebeat deb
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
+
+  - name: install filebeat deb
+    command: dpkg -i filebeat-7.4.0-amd64.deb
+
+  - name: drop in filebeat.yml
+    copy:
+      src: /etc/ansible/files/filebeat-config.yml
+      dest: /etc/filebeat/filebeat.yml
+
+  - name: enable and configure system module
+    command: filebeat modules enable system
+
+  - name: setup filebeat
+    command: filebeat setup
+
+  - name: start filebeat service
+    command: service filebeat start
+
+  - name: enable service filebeat on boot
+    systemd:
+      name: filebeat
+      enabled: yes
+
+```
+Commands for Install Metricbeat playbook.
+```bash
+- name: Install metric beat
+  hosts: webservers
+  become: true
+  tasks:
+  - name: Download metricbeat
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb
+
+  - name: install metricbeat
+    command: dpkg -i metricbeat-7.4.0-amd64.deb
+
+  - name: drop in metricbeat config
+    copy:
+      src: /etc/ansible/files/metricbeat-config.yml
+      dest: /etc/metricbeat/metricbeat.yml
+
+  - name: enable and configure docker module for metric beat
+    command: metricbeat modules enable docker
+
+  - name: setup metric beat
+    command: metricbeat setup
+
+  - name: start metric beat
+    command: service metricbeat start
+```
