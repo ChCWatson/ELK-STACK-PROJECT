@@ -2,7 +2,7 @@ Mission 1
 
 Determine and document the mail servers for starwars.com using NSLOOKUP.
 
-
+![](https://github.com/Plampking/ELK-STACK-PROJECT/blob/main/Linux/Images/Capture.JPG)
 
 Explain why the Resistance isn't receiving any emails.
 ```
@@ -31,15 +31,22 @@ Mission 2
 Your mission:
 Determine and document the SPF for theforce.net using NSLOOKUP.
 
-Explain why the Force's emails are going to spam.
-New IP address is not listed 45.23.176.21
-Document what a corrected DNS record should be.
-Add the new IP address.
+![](https://github.com/Plampking/ELK-STACK-PROJECT/blob/main/Linux/Images/nslookupNS.JPG)
 
+Explain why the Force's emails are going to spam.
+```
+New IP address is not listed 45.23.176.21
+```
+Document what a corrected DNS record should be.
+```
+Add the new IP address.
+```
 
 Mission 3
 Your mission:
 Document how a CNAME should look by viewing the CNAME of www.theforce.net using NSLOOKUP.
+
+ ![](https://github.com/Plampking/ELK-STACK-PROJECT/blob/main/Linux/Images/nslookupNS.JPG)
 
 Explain why the sub page of resistance.theforce.net isn't redirecting to theforce.net.
 The sub page isn’t redirecting to theforce.net because the address to theforce.net is www.theforce.net.
