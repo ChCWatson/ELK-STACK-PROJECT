@@ -7,7 +7,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![](https://github.com/Plampking/ELK-STACK-PROJECT/blob/main/Diagrams/HW%20Diagram.jpg)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the .yml file may be used to install only certain pieces of it, such as Filebeat.
 
 [Elk Stack Playbook](https://github.com/Plampking/ELK-STACK-PROJECT/blob/main/Ansible/install-elk.yml)  
 [Filebeat Playbook](https://github.com/Plampking/ELK-STACK-PROJECT/blob/main/Ansible/filebeat-play.yml)  
@@ -31,11 +31,10 @@ Load blancers help a environment's availability through distribution of incoming
 The Jump Box provides a more efffect method to manage administration of multiple systems.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the event logs and system metrics.
-- Filebeat watches for log directories or specific log files.
-- Metricbeat helps monitor servers by collecting metrics from the system and services running within the server.
+- Filebeat monitors for specific log files.
+- Metricbeat helps monitor servers by taking the metrics and statistics that it collects and ships them to the output that you specify.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
