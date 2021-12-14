@@ -19,9 +19,9 @@ Answer the following questions about the HTTP request and response process.
 
 1. What type of architecture does the HTTP request and response process occur in?
 
---- bash
+```
 HTTP request and response processs occurs in client-server architecture.  
----
+```
 
 2. What are the different parts of an HTTP request? 
 
