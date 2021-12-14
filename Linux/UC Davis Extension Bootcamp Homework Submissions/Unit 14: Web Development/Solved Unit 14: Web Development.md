@@ -63,10 +63,19 @@ The Header is the part of the HTTP request that contian the data being sent to t
 Answer the following questions about `curl`:
 
 10. What are the advantages of using `curl` over the browser?
+```
+'curl' allows cybersecurity professionals to quickly test HTTP requests in a way that can be  
+automated, but also allows them to make adjustments as they work.
+```
 
 11. Which `curl` option is used to change the request method?
-
+```
+The 'curl' option that is used to change the request method is '-X' or '--request'.
+```
 12. Which `curl` option is used to set request headers?
+```
+The 'curl' option that is used to set request headers is '-H'
+```
 
 13. Which `curl` option is used to view the response header?
 
